@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         
         button.setImage(UIImage(systemName: "arrow.left.arrow.right", withConfiguration: config), for: .normal)
         
+        
         return button
     }()
     
@@ -155,15 +156,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickersSetup()
-        var answer = ""
-        
         initialize()
-        let ocr = OCR(image: UIImage(named: "sample")!, language: "English🇬🇧")
-        ocr.callOCRSpace(completion: { text in
-            answer = text
-            print(answer)
-        })
         
+        var answer = ""
+
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            let ocr = OCR(image: UIImage(named: "sample")!, language: "English🇬🇧")
+            ocr.callOCRSpace(completion: { text in
+                answer = text
+                group.leave()
+
+            })
+        }
+        
+        group.notify(queue: .main) {
+            self.originalTextView.text += answer
+        }
         
     }
 
