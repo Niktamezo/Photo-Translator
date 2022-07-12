@@ -1,0 +1,6 @@
+framework module Pods_PhotoTranslator {
+  umbrella header "Pods-PhotoTranslator-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_PhotoTranslatorTests {
+  umbrella header "Pods-PhotoTranslatorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

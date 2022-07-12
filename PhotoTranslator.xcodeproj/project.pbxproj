@@ -16,6 +16,11 @@
 		118F07D0287D24A90098944D /* PhotoTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F07CF287D24A90098944D /* PhotoTranslatorTests.swift */; };
 		118F07DA287D24A90098944D /* PhotoTranslatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F07D9287D24A90098944D /* PhotoTranslatorUITests.swift */; };
 		118F07DC287D24A90098944D /* PhotoTranslatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F07DB287D24A90098944D /* PhotoTranslatorUITestsLaunchTests.swift */; };
+		11C6E5FC287D4A0C008CBDEA /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6E5FB287D4A0C008CBDEA /* Languages.swift */; };
+		11C6E5FE287D75D1008CBDEA /* OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6E5FD287D75D1008CBDEA /* OCR.swift */; };
+		204D008026B0A17B87FD9B9E /* Pods_PhotoTranslatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE7DE16F7B83B8DFF3847B2 /* Pods_PhotoTranslatorTests.framework */; };
+		47C896A5D77C03E35CE9CC31 /* Pods_PhotoTranslator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCC5618289FE767616332A6 /* Pods_PhotoTranslator.framework */; };
+		9BE9451C4268EFF5109562ED /* Pods_PhotoTranslator_PhotoTranslatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909BDA26B4E348E67F7832A5 /* Pods_PhotoTranslator_PhotoTranslatorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,17 @@
 		118F07D5287D24A90098944D /* PhotoTranslatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoTranslatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		118F07D9287D24A90098944D /* PhotoTranslatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTranslatorUITests.swift; sourceTree = "<group>"; };
 		118F07DB287D24A90098944D /* PhotoTranslatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTranslatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		11C6E5FB287D4A0C008CBDEA /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		11C6E5FD287D75D1008CBDEA /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
+		243F4A959949E3E63401F083 /* Pods-PhotoTranslatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslatorTests.release.xcconfig"; path = "Target Support Files/Pods-PhotoTranslatorTests/Pods-PhotoTranslatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		39421053A8744593C6E24829 /* Pods-PhotoTranslator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslator.debug.xcconfig"; path = "Target Support Files/Pods-PhotoTranslator/Pods-PhotoTranslator.debug.xcconfig"; sourceTree = "<group>"; };
+		450589F19B6B9349E5CB1CF7 /* Pods-PhotoTranslatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslatorTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoTranslatorTests/Pods-PhotoTranslatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7945BB7F74A0956E16B0ADA4 /* Pods-PhotoTranslator-PhotoTranslatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslator-PhotoTranslatorUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotoTranslator-PhotoTranslatorUITests/Pods-PhotoTranslator-PhotoTranslatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		909BDA26B4E348E67F7832A5 /* Pods_PhotoTranslator_PhotoTranslatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoTranslator_PhotoTranslatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7439A630572B69627FB1CFB /* Pods-PhotoTranslator-PhotoTranslatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslator-PhotoTranslatorUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoTranslator-PhotoTranslatorUITests/Pods-PhotoTranslator-PhotoTranslatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBCC5618289FE767616332A6 /* Pods_PhotoTranslator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoTranslator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEDFE78FEFE29E3E69EA03F3 /* Pods-PhotoTranslator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoTranslator.release.xcconfig"; path = "Target Support Files/Pods-PhotoTranslator/Pods-PhotoTranslator.release.xcconfig"; sourceTree = "<group>"; };
+		DBE7DE16F7B83B8DFF3847B2 /* Pods_PhotoTranslatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoTranslatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C896A5D77C03E35CE9CC31 /* Pods_PhotoTranslator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204D008026B0A17B87FD9B9E /* Pods_PhotoTranslatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE9451C4268EFF5109562ED /* Pods_PhotoTranslator_PhotoTranslatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +102,8 @@
 				118F07CE287D24A90098944D /* PhotoTranslatorTests */,
 				118F07D8287D24A90098944D /* PhotoTranslatorUITests */,
 				118F07B6287D24A80098944D /* Products */,
+				422506FAD2040D71D39ED43F /* Pods */,
+				A8148BDA7D20DEADD3C3E32D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +123,7 @@
 				118F07B8287D24A80098944D /* AppDelegate.swift */,
 				118F07BA287D24A80098944D /* SceneDelegate.swift */,
 				118F07BC287D24A80098944D /* ViewController.swift */,
+				11C6E5FF287D7D89008CBDEA /* Model */,
 				118F07BE287D24A80098944D /* Main.storyboard */,
 				118F07C1287D24A90098944D /* Assets.xcassets */,
 				118F07C3287D24A90098944D /* LaunchScreen.storyboard */,
@@ -127,6 +149,38 @@
 			path = PhotoTranslatorUITests;
 			sourceTree = "<group>";
 		};
+		11C6E5FF287D7D89008CBDEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C6E5FB287D4A0C008CBDEA /* Languages.swift */,
+				11C6E5FD287D75D1008CBDEA /* OCR.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		422506FAD2040D71D39ED43F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39421053A8744593C6E24829 /* Pods-PhotoTranslator.debug.xcconfig */,
+				CEDFE78FEFE29E3E69EA03F3 /* Pods-PhotoTranslator.release.xcconfig */,
+				A7439A630572B69627FB1CFB /* Pods-PhotoTranslator-PhotoTranslatorUITests.debug.xcconfig */,
+				7945BB7F74A0956E16B0ADA4 /* Pods-PhotoTranslator-PhotoTranslatorUITests.release.xcconfig */,
+				450589F19B6B9349E5CB1CF7 /* Pods-PhotoTranslatorTests.debug.xcconfig */,
+				243F4A959949E3E63401F083 /* Pods-PhotoTranslatorTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A8148BDA7D20DEADD3C3E32D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBCC5618289FE767616332A6 /* Pods_PhotoTranslator.framework */,
+				909BDA26B4E348E67F7832A5 /* Pods_PhotoTranslator_PhotoTranslatorUITests.framework */,
+				DBE7DE16F7B83B8DFF3847B2 /* Pods_PhotoTranslatorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118F07DF287D24A90098944D /* Build configuration list for PBXNativeTarget "PhotoTranslator" */;
 			buildPhases = (
+				9519BE3C87B8B81247D19501 /* [CP] Check Pods Manifest.lock */,
 				118F07B1287D24A80098944D /* Sources */,
 				118F07B2287D24A80098944D /* Frameworks */,
 				118F07B3287D24A80098944D /* Resources */,
+				B8B249B5CDBC7AA86714E97A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +207,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118F07E2287D24A90098944D /* Build configuration list for PBXNativeTarget "PhotoTranslatorTests" */;
 			buildPhases = (
+				4700D826B9079D76B3BAD972 /* [CP] Check Pods Manifest.lock */,
 				118F07C7287D24A90098944D /* Sources */,
 				118F07C8287D24A90098944D /* Frameworks */,
 				118F07C9287D24A90098944D /* Resources */,
@@ -169,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118F07E5287D24A90098944D /* Build configuration list for PBXNativeTarget "PhotoTranslatorUITests" */;
 			buildPhases = (
+				697EE1584E82A19BA3678C26 /* [CP] Check Pods Manifest.lock */,
 				118F07D1287D24A90098944D /* Sources */,
 				118F07D2287D24A90098944D /* Frameworks */,
 				118F07D3287D24A90098944D /* Resources */,
+				06DDB95BBCB8501F25522E11 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +312,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06DDB95BBCB8501F25522E11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator-PhotoTranslatorUITests/Pods-PhotoTranslator-PhotoTranslatorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator-PhotoTranslatorUITests/Pods-PhotoTranslator-PhotoTranslatorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator-PhotoTranslatorUITests/Pods-PhotoTranslator-PhotoTranslatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4700D826B9079D76B3BAD972 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoTranslatorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		697EE1584E82A19BA3678C26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoTranslator-PhotoTranslatorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9519BE3C87B8B81247D19501 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoTranslator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8B249B5CDBC7AA86714E97A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator/Pods-PhotoTranslator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator/Pods-PhotoTranslator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoTranslator/Pods-PhotoTranslator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		118F07B1287D24A80098944D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				118F07BD287D24A80098944D /* ViewController.swift in Sources */,
+				11C6E5FC287D4A0C008CBDEA /* Languages.swift in Sources */,
 				118F07B9287D24A80098944D /* AppDelegate.swift in Sources */,
 				118F07BB287D24A80098944D /* SceneDelegate.swift in Sources */,
+				11C6E5FE287D75D1008CBDEA /* OCR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +596,7 @@
 		};
 		118F07E0287D24A90098944D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39421053A8744593C6E24829 /* Pods-PhotoTranslator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +608,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,6 +626,7 @@
 		};
 		118F07E1287D24A90098944D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEDFE78FEFE29E3E69EA03F3 /* Pods-PhotoTranslator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +638,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,6 +656,7 @@
 		};
 		118F07E3287D24A90098944D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 450589F19B6B9349E5CB1CF7 /* Pods-PhotoTranslatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +677,7 @@
 		};
 		118F07E4287D24A90098944D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 243F4A959949E3E63401F083 /* Pods-PhotoTranslatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +698,7 @@
 		};
 		118F07E6287D24A90098944D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7439A630572B69627FB1CFB /* Pods-PhotoTranslator-PhotoTranslatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +717,7 @@
 		};
 		118F07E7287D24A90098944D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7945BB7F74A0956E16B0ADA4 /* Pods-PhotoTranslator-PhotoTranslatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
