@@ -25,13 +25,13 @@ class OCR {
         
         let session = URLSession.shared
         
-        let imageData = image.jpegData(compressionQuality: 0.6)
+        let imageData = image.jpegData(compressionQuality: 0.3)
         let parametersDictionary = ["apikey": "K89601051888957", "isOverlayRequired" : "True", "language": language]
+        print(language)
         
         let data = createBody(withBoundary: boundary, parameters: parametersDictionary, imageData: imageData, filename: "image.jpg")
         
         request?.httpBody = data
-        
         
         var task: URLSessionDataTask? = nil
         if let request = request {
@@ -101,8 +101,8 @@ class OCR {
         self.image = image
         switch language {
         case "Arabic🇦🇪": self.language = "ara"
-        case languages[1]: self.language = "bul"
-        case languages[2]: self.language = "chs"
+        case languages[1]: self.language = "chs"
+        case languages[2]: self.language = "bul"
         case languages[3]: self.language = "hrv"
         case languages[4]: self.language = "cze"
         case languages[5]: self.language = "dan"
@@ -113,14 +113,14 @@ class OCR {
         case languages[10]: self.language = "ger"
         case languages[11]: self.language = "gre"
         case languages[12]: self.language = "hun"
-        case languages[13]: self.language = "kor"
-        case languages[14]: self.language = "ita"
-        case languages[15]: self.language = "jpn"
+        case languages[13]: self.language = "ita"
+        case languages[14]: self.language = "jpn"
+        case languages[15]: self.language = "kor"
         case languages[16]: self.language = "pol"
         case languages[17]: self.language = "por"
         case languages[18]: self.language = "rus"
-        case languages[19]: self.language = "slv"
-        case languages[20]: self.language = "spa"
+        case languages[19]: self.language = "spa"
+        case languages[20]: self.language = "slv"
         case languages[21]: self.language = "swe"
         case languages[22]: self.language = "tur"
         default: self.language = "en"

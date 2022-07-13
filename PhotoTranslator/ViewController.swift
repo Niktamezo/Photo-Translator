@@ -10,6 +10,12 @@ import SnapKit
 
 class ViewController: UIViewController {
     
+    var imagePicked: UIImageView = {
+        var picture = UIImageView()
+        
+        return picture
+    }()
+    
     let originalTextLabel : UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,14 +25,6 @@ class ViewController: UIViewController {
         return label
     }()
     
-    let translatedTextLabel : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Translated text:"
-        label.textAlignment = .center
-         
-         return label
-     }()
     
     let takePhotoButton: UIButton = {
         var button = UIButton(frame: CGRect(x: 100, y: 100, width: 60, height: 60))
@@ -36,7 +34,6 @@ class ViewController: UIViewController {
         
         
         button.setImage(image, for: .normal)
-        
         
         return button
     }()
@@ -103,13 +100,15 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(originalTextLabel)
-//        view.addSubview(translatedTextLabel)
         view.addSubview(swapLanguagesButton)
         view.addSubview(inputPicker)
         view.addSubview(outputPicker)
         view.addSubview(originalTextView)
         view.addSubview(translatedTextView)
         view.addSubview(takePhotoButton)
+        
+        takePhotoButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+        swapLanguagesButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
         
         originalTextLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(50)
@@ -158,28 +157,27 @@ class ViewController: UIViewController {
         pickersSetup()
         initialize()
         
-        var answer = ""
-
-        let group = DispatchGroup()
-        group.enter()
-        
-        DispatchQueue.main.async {
-            let ocr = OCR(image: UIImage(named: "sample")!, language: "English🇬🇧")
-            ocr.callOCRSpace(completion: { text in
-                answer = text
-                group.leave()
-
-            })
-        }
-        
-        group.notify(queue: .main) {
-            self.originalTextView.text += answer
+        TranslatorManager(text: "Hello, World!", outputLanguage: "Russian🇷🇺").callYaTranslate { hello in
+            print(hello)
         }
         
     }
-
-
     
+    @objc func swapLanguage() {
+        let inputCurrentPick = inputPicker.selectedRow(inComponent: 0)
+        let outputCurrentPick = outputPicker.selectedRow(inComponent: 0)
+        
+        self.outputPicker.selectRow(inputCurrentPick, inComponent: 0, animated: true)
+        self.inputPicker.selectRow(outputCurrentPick, inComponent: 0, animated: true)
+    }
+
+    @objc func takePhoto() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+        picker.allowsEditing = false
+    }
     
     
     
@@ -205,6 +203,58 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 extension ViewController: UITextViewDelegate {
+    
+    
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imagedata = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imagePicked.image = imagedata
+        }
+        dismiss(animated: true)
+        let group = DispatchGroup()
+        group.enter()
+
+        
+        self.originalTextView.text = ""
+        
+        var inputText = ""
+        var outputText = ""
+        
+        DispatchQueue.main.async {
+            if let image = self.imagePicked.image {
+                let ocr = OCR(image: image, language: languages[self.inputPicker.selectedRow(inComponent: 0)])
+                ocr.callOCRSpace(completion: { text in
+                    inputText = text
+                    translate()
+                })
+            }
+            
+            
+            group.notify(queue: .main) {
+                self.originalTextView.text += inputText
+                self.translatedTextView.text += outputText
+            }
+            
+        }
+        
+        func translate() {
+        DispatchQueue.main.async {
+            let translate = TranslatorManager(text: inputText, outputLanguage: languages[self.outputPicker.selectedRow(inComponent: 0)])
+            translate.callYaTranslate { answer in
+                outputText = answer
+                group.leave()
+            }
+        }
+        
+        
+
+    }
+    }
+
+    
     
     
 }
