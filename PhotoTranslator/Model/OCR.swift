@@ -26,7 +26,7 @@ class OCR {
         let session = URLSession.shared
         
         let imageData = image.jpegData(compressionQuality: 0.3)
-        let parametersDictionary = ["apikey": "K89601051888957", "isOverlayRequired" : "True", "language": language]
+        let parametersDictionary = ["apikey": "Your Ocr.space API key", "isOverlayRequired" : "True", "language": language]
         print(language)
         
         let data = createBody(withBoundary: boundary, parameters: parametersDictionary, imageData: imageData, filename: "image.jpg")

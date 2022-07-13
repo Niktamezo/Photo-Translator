@@ -17,14 +17,12 @@ class TranslatorManager {
         
         request.httpMethod = "POST"
         
-        // let jsonData = "{\n\r\"folderId\": \"b1grbe66qrddgq60nja1\",\n\r\"texts\": \(text.components(separatedBy: " ")),\n\r\"targetLanguageCode\": \(getLanguageCode(language: outputLanguage))\n}"
-        
-        // print(jsonData)
+
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer t1.9euelZrIkYnKkomWjp2Oy4-MicfNme3rnpWaxpWKzpHJk8nInsuanpmbzMjl9PcAWUVp-e9lcUWf3fT3QAdDafnvZXFFnw.cUiumMgcych-Rq6GlPeNEYz-RXRSWW2K8f3USYlTZd4RBxdXPiVR9mnAZULK-1JfeNqwLPHzlYiYt_Lm42y_Ag", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer your yandex beared", forHTTPHeaderField: "Authorization")
         
         
-        let parameters = ["folderId" : "b1grbe66qrddgq60nja1",  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
+        let parameters = ["folderId" : "your folder id",  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
         
         
         do {
