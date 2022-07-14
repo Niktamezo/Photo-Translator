@@ -82,6 +82,16 @@ class ViewController: UIViewController {
         
         return textView
     }()
+    
+    let activityIndicator: UIActivityIndicatorView = {
+        var indicator = UIActivityIndicatorView()
+        indicator.color = .systemBlue
+        indicator.hidesWhenStopped = true
+        indicator.style = .large
+        indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        
+        return indicator
+    }()
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -106,6 +116,7 @@ class ViewController: UIViewController {
         view.addSubview(originalTextView)
         view.addSubview(translatedTextView)
         view.addSubview(takePhotoButton)
+        view.addSubview(activityIndicator)
         
         takePhotoButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
         swapLanguagesButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
@@ -150,16 +161,18 @@ class ViewController: UIViewController {
             make.left.right.equalToSuperview().inset(10)
             make.top.equalTo(swapLanguagesButton.snp.bottom).inset(-20)
         }
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(70)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(20)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickersSetup()
         initialize()
-        
-        TranslatorManager(text: "Hello, World!", outputLanguage: "Russian🇷🇺").callYaTranslate { hello in
-            print(hello)
-        }
         
     }
     
@@ -217,8 +230,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         let group = DispatchGroup()
         group.enter()
 
-        
+        self.activityIndicator.startAnimating()
         self.originalTextView.text = ""
+        self.translatedTextView.text = ""
         
         var inputText = ""
         var outputText = ""
@@ -236,6 +250,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             group.notify(queue: .main) {
                 self.originalTextView.text += inputText
                 self.translatedTextView.text += outputText
+                self.activityIndicator.stopAnimating()
             }
             
         }

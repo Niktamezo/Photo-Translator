@@ -19,10 +19,10 @@ class TranslatorManager {
         
 
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer your yandex beared", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer <YourAuthorizationToken>", forHTTPHeaderField: "Authorization")
         
         
-        let parameters = ["folderId" : "your folder id",  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
+        let parameters = ["folderId" : "<YourFolderIdInYandexCloud>",  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
         
         
         do {
