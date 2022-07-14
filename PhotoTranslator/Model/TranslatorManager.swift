@@ -89,6 +89,3 @@ class TranslatorManager {
         }
     }
 }
-
-
-// token Authorization: Bearer t1.9euelZrGi5bNx8eVl5jHxpfLmYqWyu3rnpWaxpWKzpHJk8nInsuanpmbzMjl8_cBUEZp-e90Tn0g_d3z90F-Q2n573ROfSD9.rcBaWk7DXY6ojXfwNegTDge55xqq-kfHgwI8snfMVFd0WscB4bVphttaHZ9KnUDwjxnKzS0inFDWLkSJYHxOAw
