@@ -273,5 +273,3 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     
 }
-
-// OCR API Key: K89601051888957

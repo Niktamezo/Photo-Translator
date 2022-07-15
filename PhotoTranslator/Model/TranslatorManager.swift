@@ -10,6 +10,9 @@ class TranslatorManager {
     
     func callYaTranslate(completion: @escaping(String) -> ()) {
         
+        let folderID = "<YourFolderIdInYandexCloud>"
+        let authBearer = "<YourAuthorizationToken>"
+        
         let url = URL(string: "https://translate.api.cloud.yandex.net/translate/v2/translate")
         
         
@@ -19,10 +22,10 @@ class TranslatorManager {
         
 
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer <YourAuthorizationToken>", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(authBearer)", forHTTPHeaderField: "Authorization")
         
         
-        let parameters = ["folderId" : "<YourFolderIdInYandexCloud>",  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
+        let parameters = ["folderId" : folderID,  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
         
         
         do {

@@ -11,6 +11,7 @@ class OCR {
     
     func callOCRSpace(completion: @escaping(String)->()) {
         let url = URL(string: "https://api.ocr.space/Parse/Image")
+        let ocrSpaceKey = "<OCR SPACE Key>"
         
         var request: URLRequest? = nil
         
@@ -26,7 +27,7 @@ class OCR {
         let session = URLSession.shared
         
         let imageData = image.jpegData(compressionQuality: 0.3)
-        let parametersDictionary = ["apikey": "<OCR SPACE Key>", "isOverlayRequired" : "True", "language": language]
+        let parametersDictionary = ["apikey": ocrSpaceKey, "isOverlayRequired" : "True", "language": language]
         
         let data = createBody(withBoundary: boundary, parameters: parametersDictionary, imageData: imageData, filename: "image.jpg")
         
