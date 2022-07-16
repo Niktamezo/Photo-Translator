@@ -11,7 +11,7 @@ class OCR {
     
     func callOCRSpace(completion: @escaping(String)->()) {
         let url = URL(string: "https://api.ocr.space/Parse/Image")
-        let ocrSpaceKey = "<OCR SPACE Key>"
+        let ocrSpaceKey = "K89601051888957"
         
         var request: URLRequest? = nil
         
@@ -46,8 +46,8 @@ class OCR {
                 }
                 if let parsedResults = result?["ParsedResults"] as? [[String: Any]] {
                     if let parsedResult = parsedResults.first {
-                        if let text = parsedResult["ParsedText"] as? String? {
-                            completion(text!)
+                        if let text = parsedResult["ParsedText"] as? String {
+                            completion(text)
                         }
                     }
                 }

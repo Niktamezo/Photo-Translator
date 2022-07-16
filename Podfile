@@ -7,6 +7,8 @@ target 'PhotoTranslator' do
 
   # Pods for PhotoTranslator
 	pod 'SnapKit', '~> 5.6.0'
+	pod 'GoogleMLKit/TextRecognition', '3.1.0'
+	pod 'GoogleMLKit/Translate', '3.1.0'
   target 'PhotoTranslatorTests' do
     inherit! :search_paths
     # Pods for testing

@@ -10,8 +10,8 @@ class TranslatorManager {
     
     func callYaTranslate(completion: @escaping(String) -> ()) {
         
-        let folderID = "<YourFolderIdInYandexCloud>"
-        let authBearer = "<YourAuthorizationToken>"
+        let folderID = "b1grbe66qrddgq60nja1"
+        let authBearer = "t1.9euelZrKzJ3OyM6ey4uXmMuTx5Kcku3rnpWaxpWKzpHJk8nInsuanpmbzMjl9PdEdDRp-e8tcV673fT3BCMyafnvLXFeuw.MEh7nRcR62lIMGtEqoZiToPOWiBiaBSeGMA1F6CQJaJovY8DsApGvoJ8S3XQmSwi6ZQWxZsIPULQz5bZ1WPzAA"
         
         let url = URL(string: "https://translate.api.cloud.yandex.net/translate/v2/translate")
         
@@ -20,12 +20,12 @@ class TranslatorManager {
         
         request.httpMethod = "POST"
         
-
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(authBearer)", forHTTPHeaderField: "Authorization")
         
         
-        let parameters = ["folderId" : folderID,  "texts" : text.components(separatedBy: " "), "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
+        let parameters = ["folderId" : folderID,  "texts" : [text], "targetLanguageCode": getLanguageCode(language: self.outputLanguage)] as [String : Any]
         
         
         do {
@@ -45,8 +45,9 @@ class TranslatorManager {
             do {
                 if let data = data {
                     let translate = try? JSONDecoder().decode(Translate.self, from: data)
-                    for word in translate!.translations {
-                        output += word.text + " "
+                    guard let translate = translate else { return }
+                        for word in translate.translations {
+                            output += word.text + " "
                     }
                     completion(output)
                 }

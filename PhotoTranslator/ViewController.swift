@@ -17,10 +17,11 @@ class ViewController: UIViewController {
     }()
     
     let originalTextLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Text from Photo:"
         label.textAlignment = .center
+        label.textColor = .black
         
         return label
     }()
@@ -71,6 +72,7 @@ class ViewController: UIViewController {
         var textView = UITextView()
         textView.backgroundColor = UIColor(red: 241/255, green: 238/255, blue: 235/255, alpha: 1)
         textView.font = UIFont.systemFont(ofSize: 20)
+        textView.textColor = .black
         
         return textView
     }()
@@ -79,6 +81,7 @@ class ViewController: UIViewController {
         var textView = UITextView()
         textView.backgroundColor = UIColor(red: 241/255, green: 238/255, blue: 235/255, alpha: 1)
         textView.font = UIFont.systemFont(ofSize: 20)
+        textView.textColor = .black
         
         return textView
     }()
@@ -87,12 +90,12 @@ class ViewController: UIViewController {
         var indicator = UIActivityIndicatorView()
         indicator.color = .systemBlue
         indicator.hidesWhenStopped = true
-        indicator.style = .large
         indicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        indicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         
         return indicator
     }()
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.originalTextView.resignFirstResponder()
@@ -104,6 +107,8 @@ class ViewController: UIViewController {
         inputPicker.dataSource = self
         outputPicker.delegate = self
         outputPicker.dataSource = self
+        
+        originalTextView.delegate = self
     }
     
     fileprivate func initialize() {
@@ -183,7 +188,7 @@ class ViewController: UIViewController {
         self.outputPicker.selectRow(inputCurrentPick, inComponent: 0, animated: true)
         self.inputPicker.selectRow(outputCurrentPick, inComponent: 0, animated: true)
     }
-
+    
     @objc func takePhoto() {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -198,6 +203,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.translate()
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -206,21 +215,38 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return languages.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return languages[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: languages[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
     }
     
     
     
 }
 
-extension ViewController: UITextViewDelegate {
-    
-    
-}
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        translate()
+    }
+    
+    func translate() {
+        var outputText = ""
+        let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.main.async {
+            let translate = TranslatorManager(text: self.originalTextView.text, outputLanguage: languages[self.outputPicker.selectedRow(inComponent: 0)])
+            translate.callYaTranslate { answer in
+                outputText = answer
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            self.translatedTextView.text = outputText
+        }
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imagedata = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -229,47 +255,30 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         dismiss(animated: true)
         let group = DispatchGroup()
         group.enter()
-
+        
         self.activityIndicator.startAnimating()
         self.originalTextView.text = ""
         self.translatedTextView.text = ""
         
         var inputText = ""
-        var outputText = ""
         
         DispatchQueue.main.async {
             if let image = self.imagePicked.image {
                 let ocr = OCR(image: image, language: languages[self.inputPicker.selectedRow(inComponent: 0)])
                 ocr.callOCRSpace(completion: { text in
                     inputText = text
-                    translate()
+                    if inputText == "" {
+                        inputText = "No text found"
+                    }
+                    group.leave()
                 })
             }
             
-            
             group.notify(queue: .main) {
                 self.originalTextView.text += inputText
-                self.translatedTextView.text += outputText
                 self.activityIndicator.stopAnimating()
-            }
-            
-        }
-        
-        func translate() {
-        DispatchQueue.main.async {
-            let translate = TranslatorManager(text: inputText, outputLanguage: languages[self.outputPicker.selectedRow(inComponent: 0)])
-            translate.callYaTranslate { answer in
-                outputText = answer
-                group.leave()
+                self.translate()
             }
         }
-        
-        
-
     }
-    }
-
-    
-    
-    
 }
