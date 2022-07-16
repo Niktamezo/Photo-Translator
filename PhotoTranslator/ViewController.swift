@@ -127,14 +127,14 @@ class ViewController: UIViewController {
         swapLanguagesButton.addTarget(self, action: #selector(swapLanguage), for: .touchUpInside)
         
         originalTextLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(50)
+            make.top.equalToSuperview().inset(40)
             make.centerX.equalToSuperview()
         }
         
         originalTextView.snp.makeConstraints { make in
             make.top.equalTo(originalTextLabel.snp.bottom).inset(-10)
             make.left.right.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(470)
+            make.bottom.equalToSuperview().dividedBy(2.3)
         }
         
         takePhotoButton.snp.makeConstraints { make in
@@ -178,7 +178,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         pickersSetup()
         initialize()
-        
+
     }
     
     @objc func swapLanguage() {
@@ -196,8 +196,6 @@ class ViewController: UIViewController {
         present(picker, animated: true, completion: nil)
         picker.allowsEditing = false
     }
-    
-    
     
 }
 
