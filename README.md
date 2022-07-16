@@ -1,6 +1,8 @@
 Translating text from photo.
 
-Using SnapKit
+Using SnapKit, MVC
+
+Needs OCRSpace API Key, YandexCloud API Key, YandexCloud folder ID 
 
 OCR is provided by OCRSpace
 Limit of photo in free version is 1MB, so image compression for POST request is 0.3, but still doesnt work sometimes on iPhone 11
