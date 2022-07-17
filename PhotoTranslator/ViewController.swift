@@ -178,7 +178,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         pickersSetup()
         initialize()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
     }
     
     @objc func swapLanguage() {
