@@ -1,4 +1,4 @@
-Translating text from photo.
+Translating text from photo. Also works just like a usual real-time translator
 
 Using SnapKit, MVC
 
